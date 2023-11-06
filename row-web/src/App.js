@@ -12,6 +12,8 @@ import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
 import Login from './Login';
 import ForgotPassword from './ForgotPassword';
+import RegisterPage from './RegisterPage';
+import LandingController from './components/LandingController';
 
 const textInputTheme = createTheme({
   palette: {
@@ -67,8 +69,10 @@ function App() {
 
   return (
     <div>
-      <Login/>
+      {/* <Login/> */}
       {/* <ForgotPassword /> */}
+      {/* <RegisterPage/> */}
+      <LandingController />
     </div>
   );
 }

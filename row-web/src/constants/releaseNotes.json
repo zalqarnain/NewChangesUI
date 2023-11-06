@@ -1,0 +1,19 @@
+{
+    "version": "1.3.4",
+    "name": "DeepRoad",
+    "notes": [
+        "Efficient linear road asset inventory generation",
+        "Comprehensive road distress analysis",
+        "Seamless integration with your current system for convenient reporting",
+        "Multiple output formats including PDF, CSV, KML, and GPX",
+        "Stunningly designed dashboards for enhanced visual experience"
+    ],
+    "title": "🚀 Features released",
+    "forceNoShow": false,
+    "greeting": "Get insights from your road videos with AI analysis",
+    "company": {
+        "name": "Strada Imaging",
+        "website": "https://www.stradaimaging.com"
+    },
+    "dev": false
+}
