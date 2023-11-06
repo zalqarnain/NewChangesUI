@@ -10,6 +10,45 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
+import { makeStyles } from "@mui/styles"
+
+const useStyles = makeStyles((theme) => ({
+        heading: {
+            margin: "0 auto 0 auto",
+            width: "80%",
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "24px",
+            color: "#1f0851",
+        },
+        textFieldStyle: {
+            marginBottom: "20px",
+            backgroundColor: "white",
+        },
+        existingAccountLink: {
+            color: "purple",
+            cursor: "pointer",
+            textDecoration: "none",
+            "&:hover": {
+                textDecoration: "underline",
+                color: "red",
+            },
+        },
+        tryForFreeButton: {
+            textTransform: "capitalize",
+            backgroundColor: "#448717",
+            color: "white",
+            fontSize: "17px",
+            marginBottom: "15px",
+            borderRadius: "4px",
+        },
+        forgotPass: {
+            color: "#1f0851",
+            textDecoration: "underline",
+            marginBottom: '10px'
+            // '&:hover'
+        },
+}));
 
 const textInputTheme = createTheme({
     palette: {
@@ -23,44 +62,10 @@ const textInputTheme = createTheme({
     }
 });
 
-const styles = {
-    heading: {
-        margin: "0 auto 0 auto",
-        width: "80%",
-        textAlign: "center",
-        fontWeight: "bold",
-        fontSize: "24px",
-        color: "#1f0851",
-    },
-    textFieldStyle: {
-        marginBottom: "20px",
-        backgroundColor: "white",
-    },
-    existingAccountLink: {
-        color: "purple",
-        cursor: "pointer",
-        textDecoration: "none",
-        "&:hover": {
-            textDecoration: "underline",
-            color: "red",
-        },
-    },
-    tryForFreeButton: {
-        textTransform: "capitalize",
-        backgroundColor: "#448717",
-        color: "white",
-        fontSize: "17px",
-        marginBottom: "15px",
-        borderRadius: "4px",
-    },
-    forgotPass: {
-        color: "#1f0851",
-        textDecoration: "underline",
-        // '&:hover'
-    },
-};
 
 const ForgotPassword = () => {
+    const classes = useStyles();
+
     const [values, setValues] = React.useState({
         email: "",
     });
@@ -92,18 +97,18 @@ const ForgotPassword = () => {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const relevantSubmitComponent =
-        //  showLoader ? (
-        //     <CircularProgress style={{ color: "#1f0851" }} />
-        // ) : (
-        <Button
-            style={styles.tryForFreeButton}
-            variant="contained"
-            onClick={handleSubmit}
-        >
-            Send Link
-        </Button>
-    // );
+    // const relevantSubmitComponent =
+    //     //  showLoader ? (
+    //     //     <CircularProgress style={{ color: "#1f0851" }} />
+    //     // ) : (
+    //     <Button
+    //         className={classes.tryForFreeButton}
+    //         variant="contained"
+    //         onClick={handleSubmit}
+    //     >
+    //         Send Link
+    //     </Button>
+    // // );
 
     return (
         <Container>
@@ -133,7 +138,7 @@ const ForgotPassword = () => {
                                         <div>
                                             <TextField
                                                 fullWidth
-                                                style={styles.textFieldStyle}
+                                                className={classes.textFieldStyle}
                                                 value={values.email}
                                                 onChange={handleChange("email")}
                                                 size="small"
@@ -144,14 +149,15 @@ const ForgotPassword = () => {
                                             />
                                         </div>
 
-                                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                                            <Typography variant="subtitle1" style={{ ...styles.forgotPass, marginBottom: '10px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
+                                            <Typography variant="subtitle1" className={classes.forgotPass}>
                                                 <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
                                                 Sign into existing account
                                                 </Link>
                                             </Typography>
                                             <Button
-                                                style={{ ...styles.tryForFreeButton, marginLeft: '100px' }}
+                                                className={classes.tryForFreeButton}
+                                                style={{marginLeft: '100px'}}
                                                 variant="contained"
                                             // onClick={handleSubmit}
                                             >

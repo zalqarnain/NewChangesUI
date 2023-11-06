@@ -24,6 +24,7 @@ import { useTheme } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import countryList from 'country-list-js';
 import logo from './DeepRoadLogoText.svg';
+import { makeStyles } from "@mui/styles"
 
 const countries = Object.values(countryList.all).sort((a, b) => {
     if (a.name < b.name) {
@@ -51,38 +52,41 @@ const textInputTheme = createTheme({
     }
 });
 
+const useStyles = makeStyles((theme) => ({
+    heading: {
+        margin: "0 auto 0 auto",
+        width: "80%",
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: "24px",
+        color: "#1f0851",
+    },
+    textFieldStyle: {
+        marginBottom: "20px",
+        backgroundColor: "white",
+        textAlign: 'start'
+        // borderRadius: "30px",
+    },
+    existingAccountLink: {
+        color: "#1f0851",
+        cursor: "pointer",
+        textDecoration: "underline",
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    tryForFreeButton: {
+        textTransform: "capitalize",
+        backgroundColor: "#448717",
+        color: "white",
+        marginBottom: "15px",
+        borderRadius: '2px',
+        width: '100px',
+    },
+}));
+
+
 function RegisterForm(props) {
-    const styles = {
-        heading: {
-            margin: "0 auto 0 auto",
-            width: "80%",
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "24px",
-            color: "#1f0851",
-        },
-        textFieldStyle: {
-            marginBottom: "20px",
-            backgroundColor: "white",
-            textAlign: 'start'
-            // borderRadius: "30px",
-        },
-        existingAccountLink: {
-            color: "#1f0851",
-            cursor: "pointer",
-            textDecoration: "underline",
-            display: 'flex',
-            justifyContent: 'center'
-        },
-        tryForFreeButton: {
-            textTransform: "capitalize",
-            backgroundColor: "#448717",
-            color: "white",
-            marginBottom: "15px",
-            borderRadius: '2px',
-            width: '100px',
-        },
-    };
+    const classes = useStyles();
 
     //   const { error, showLoader } = props.auth;
 
@@ -154,7 +158,7 @@ function RegisterForm(props) {
         //     </Button>
         //   ) : (
         <Button
-            style={styles.tryForFreeButton}
+            className={classes.tryForFreeButton}
             variant="contained"
             sx={{ textTransform: 'inherit' }}
             onClick={handleSubmit}
@@ -177,11 +181,11 @@ function RegisterForm(props) {
             Create a free account
           </Typography> */}
                         <Box style={{ diplay: 'flex', margin: '0 auto', textAlign: 'center' }} >
-                        <img src={logo} alt='logo' width="150px" height="auto" />
-                        <Typography sx={{ fontSize:'15px' }}>
-                Lörem ipsum resa prerade, krodast. <br />
-                Heterorad lilingar dibör, plavis bigas krock.
-              </Typography>
+                            <img src={logo} alt='logo' width="150px" height="auto" />
+                            <Typography sx={{ fontSize: '15px' }}>
+                                Lörem ipsum resa prerade, krodast. <br />
+                                Heterorad lilingar dibör, plavis bigas krock.
+                            </Typography>
                         </Box>
 
                         <div style={{ padding: '20px' }}></div>
@@ -189,7 +193,7 @@ function RegisterForm(props) {
                         {/* name */}
                         <TextField
                             fullWidth
-                            style={styles.textFieldStyle}
+                            className={classes.textFieldStyle}
                             value={values.fullName}
                             onChange={handleChange("fullName")}
                             size="small"
@@ -201,7 +205,7 @@ function RegisterForm(props) {
                         <div>
                             <TextField
                                 fullWidth
-                                style={styles.textFieldStyle}
+                                className={classes.textFieldStyle}
                                 value={values.email}
                                 onChange={handleChange("email")}
                                 size="small"
@@ -214,7 +218,7 @@ function RegisterForm(props) {
                         <div>
                             <TextField
                                 fullWidth
-                                style={styles.textFieldStyle}
+                                className={classes.textFieldStyle}
                                 value={values.orgName}
                                 onChange={handleChange("orgName")}
                                 size="small"
@@ -277,7 +281,7 @@ function RegisterForm(props) {
                                 // helperText="Please select country name"
                                 fullWidth
                                 color="secondary"
-                                style={styles.textFieldStyle}
+                                className={classes.textFieldStyle}
                                 size="small"
                             >
                                 {countries.map((option, key) => (
@@ -293,25 +297,26 @@ function RegisterForm(props) {
                         </div> */}
 
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
-                    <Checkbox color="primary" />
-                    <Typography variant="subtitle1">
-                    Remember your account details.
-                    </Typography>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant="subtitle1" style={{ ...styles.forgotPass, marginBottom: '25px' }}>
-                      <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
-                      Sign into existing account
-                      </Link>
-                    </Typography>
-                    <Button
-                      style={{ ...styles.tryForFreeButton, marginLeft: '200px' }}
-                      variant="contained"
-                    // onClick={handleSubmit}
-                    >
-                      Register
-                    </Button>
-                  </div>
+                            <Checkbox color="primary" />
+                            <Typography variant="subtitle1">
+                                Remember your account details.
+                            </Typography>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <Typography variant="subtitle1" className={classes.forgotPass} style={{ marginBottom: '10px' }}>
+                                <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
+                                    Sign into existing account
+                                </Link>
+                            </Typography>
+                            <Button
+                                className={classes.tryForFreeButton}
+                                style={{ marginLeft: '200px' }}
+                                variant="contained"
+                            // onClick={handleSubmit}
+                            >
+                                Register
+                            </Button>
+                        </div>
 
                         <Typography
                             variant="subtitle2"

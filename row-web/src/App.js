@@ -14,6 +14,7 @@ import Login from './Login';
 import ForgotPassword from './ForgotPassword';
 import RegisterPage from './RegisterPage';
 import LandingController from './components/LandingController';
+import {customTheme} from './components/customTheme'
 
 const textInputTheme = createTheme({
   palette: {
@@ -27,52 +28,16 @@ const textInputTheme = createTheme({
   }
 });
 
-const styles = {
-  heading: {
-    margin: "0 auto 0 auto",
-    width: "80%",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: "24px",
-    color: "#1f0851",
-  },
-  textFieldStyle: {
-    marginBottom: "20px",
-    backgroundColor: "white",
-  },
-  existingAccountLink: {
-    color: "purple",
-    cursor: "pointer",
-    textDecoration: "none",
-    "&:hover": {
-      textDecoration: "underline",
-      color: "red",
-    },
-  },
-  tryForFreeButton: {
-    textTransform: "capitalize",
-    backgroundColor: "#448717",
-    color: "white",
-    fontSize: "17px",
-    width: "8rem",
-    marginBottom: "15px",
-    borderRadius: "4px",
-  },
-  forgotPass: {
-    color: "#1f0851",
-    textDecoration: "underline",
-    // '&:hover'
-  },
-};
-
 function App() {
 
   return (
     <div>
-      {/* <Login/> */}
-      {/* <ForgotPassword /> */}
-      {/* <RegisterPage/> */}
-      <LandingController />
+      {/* <ThemeProvider theme={customTheme}> */}
+        <Login />
+        {/* <ForgotPassword /> */}
+        {/* <RegisterPage/> */}
+        {/* <LandingController /> */}
+      {/* </ThemeProvider> */}
     </div>
   );
 }

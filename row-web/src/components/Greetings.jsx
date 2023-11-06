@@ -3,12 +3,14 @@ import Typography from "@mui/material/Typography";
 import { Link } from 'react-router-dom'
 import Container from "@mui/material/Container";
 // import Toolbar from "@mui/material/Toolbar";
-import { Card, Chip, Grid, makeStyles, Button } from "@mui/material";
+import { Card, Chip, Grid, Button } from "@mui/material";
 import releaseNotes from "../constants/releaseNotes.json"
 import ModelViewer from "../components/cidgets/3D/ModelViewer";
 import CameraswitchIcon from '@mui/icons-material/Cameraswitch';
 import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import ControlCameraOutlinedIcon from '@mui/icons-material/ControlCameraOutlined';
+import { makeStyles } from "@mui/styles";
+
 // const useStyles = makeStyles((theme) => ({
 //   gridStyles: {
 //     // marginTop: '-120px',
@@ -52,7 +54,8 @@ import ControlCameraOutlinedIcon from '@mui/icons-material/ControlCameraOutlined
 //     },
 //   },
 // }));
-const modelStyling = {
+
+const useStyles = makeStyles((theme) => ({
     "container": {
         position: "relative",
         width: "500px",
@@ -80,9 +83,12 @@ const modelStyling = {
         // mixBlendMode: "exclusion",
         backgroundColor: "rgba(0, 0, 0, 0.0)",
     }
-}
+
+}));
 
 const Greetings = () => {
+    const classes = useStyles();
+
     const [modelHintLayer, setModelHintLayer] = useState(true)
     //   const { appBarHeightSignedOut } = props;
 
@@ -133,11 +139,11 @@ const Greetings = () => {
                     <Grid item xs={12} md={7} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '', }}>
                         <Card sx={{ display: { xs: "none", sm: "none", md: 'block' }, borderRadius: '50px', backgroundColor: 'transparent', padding: '13px', border: '0px solid rgba(0,0,0,0.3)' }} elevation={0}>
 
-                            <div style={modelStyling.container}>
-                                <div style={modelStyling.backgroundDiv}>
+                            <div className={classes.container}>
+                                <div className={classes.backgroundDiv}>
                                     <ModelViewer />
                                 </div>
-                                <div style={{ zIndex: modelHintLayer ? 3 : 1, ...modelStyling.overlayDiv, display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }} onMouseOverCapture={() => { setModelHintLayer(false) }} onMouseUpCapture={() => { setModelHintLayer(true) }}>
+                                <div className={classes.overlayDiv} style={{ zIndex: modelHintLayer ? 3 : 1, display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'black' }} onMouseOverCapture={() => { setModelHintLayer(false) }} onMouseUpCapture={() => { setModelHintLayer(true) }}>
                                     <Card sx={{ width: '55px', height: '55px', padding: '14px', backgroundColor: 'rgba(255,255,255,0.75)', borderRadius: 50 }} elevation={10}>
                                         <ControlCameraOutlinedIcon sx={{ fontSize: '25px' }} />
                                     </Card>
