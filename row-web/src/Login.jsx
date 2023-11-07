@@ -11,18 +11,6 @@ import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
 import {useStyles} from './LoginStyles.js'
 
-const textInputTheme = createTheme({
-    palette: {
-        primary: {
-            main: "#448717",
-            // main: "#ec2121",
-        },
-        secondary: {
-            main: "#448717"
-        }
-    }
-});
-
 const Login = () => {
     const [values, setValues] = useState({
         email: "",
@@ -66,10 +54,11 @@ const Login = () => {
                 display: 'flex', justifyContent: 'center', alignItems: 'center', height: `calc(100vh - 70px)`, backgroundColor: ''
             }}>
                 <Grid container>
-                    <Grid item xs={6} style={{ backgroundColor: '' }}>
-                        <img src={icon} alt='logo' width="500px" height="auto" />
+                    <Grid item xs={0} sm={0} lg={6} md={6} xl={6}  style={{ backgroundColor: '' }}>
+                    <img src={icon} width="100%" />
+
                     </Grid>
-                    <Grid item xs={6} style={{ backgroundColor: '' }}>
+                    <Grid item xs={12} sm={0} lg={6} md={6} xl={6} style={{ backgroundColor: '' }}>
                         <Box style={{ diplay: 'flex', margin: '0 auto', textAlign: 'center' }}>
                             <img src={logo} alt='logo' width="150px" height="auto" />
                             <Typography sx={{ fontSize: '15px' }}>
@@ -77,7 +66,6 @@ const Login = () => {
                                 Heterorad lilingar dibör, plavis bigas krock.
                             </Typography>
                         </Box>
-                        <ThemeProvider theme={textInputTheme}>
                             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <Box sx={{ marginTop: "40px", width: '80%', backgroundColor: '', textAlign: 'center' }}>
                                     <div>
@@ -137,7 +125,7 @@ const Login = () => {
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
                                         <Checkbox color="primary" />
-                                        <Typography variant="subtitle1">
+                                        <Typography>
                                             Remember your account details.
                                         </Typography>
                                     </div>
@@ -159,7 +147,6 @@ const Login = () => {
 
                                 </Box>
                             </div>
-                        </ThemeProvider>
                     </Grid>
                 </Grid>
             </div>

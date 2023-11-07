@@ -16,25 +16,13 @@ import RegisterPage from './RegisterPage';
 import LandingController from './components/LandingController';
 import {customTheme} from './components/customTheme'
 
-const textInputTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#448717",
-      // main: "#ec2121",
-    },
-    secondary: {
-      main: "#448717"
-    }
-  }
-});
-
 function App() {
 
   return (
     <div>
       <ThemeProvider theme={customTheme}>
-        <Login />
-        {/* <ForgotPassword /> */}
+        {/* <Login /> */}
+        <ForgotPassword />
         {/* <RegisterPage/> */}
         {/* <LandingController /> */}
       </ThemeProvider>

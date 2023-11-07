@@ -3,6 +3,16 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export const customTheme=createTheme({
 
+    palette: {
+        primary: {
+            main: "#1976d2",
+            // main: "#ec2121",
+        },
+        secondary: {
+            main: "#448717"
+        }
+    },
+
     typography:{
     //   allVariants:{
     //     color: 'purple'

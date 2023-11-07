@@ -10,18 +10,10 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
-import {useStyles} from './ForgotPasswordStyles.js'
+import { useStyles } from './ForgotPasswordStyles.js'
 
 const textInputTheme = createTheme({
-    palette: {
-        primary: {
-            main: "#1976d2",
-            // main: "#ec2121",
-        },
-        secondary: {
-            main: "#448717"
-        }
-    }
+
 });
 
 
@@ -78,56 +70,56 @@ const ForgotPassword = () => {
                 display: 'flex', justifyContent: 'center', alignItems: 'center', height: `calc(100vh - 70px)`, backgroundColor: ''
             }}>
                 <Grid container>
-                    <Grid item xs={6} style={{ backgroundColor: '' }}>
-                        <img src={icon} alt='logo' width="500px" height="auto" />
+                    <Grid item xs={0} sm={0} lg={6} md={6} xl={6} style={{ backgroundColor: '' }}>
+                        <img src={icon} width="100%" />
                     </Grid>
 
-                    <Grid item xs={6} style={{ backgroundColor: '' }}>
-                        <Box>
-                            <Box style={{ width: "70vh" }}>
-                                <Box style={{ diplay: 'flex', margin: '0 auto', textAlign: 'center' }}>
-                                    <img src={logo} alt='logo' width="150px" height="auto" />
 
-                                </Box>
-                                <ThemeProvider theme={textInputTheme}>
-                                    <div >
-                                        <Typography sx={{ textAlign: 'center', fontSize:'15px' }}>
-                                            To receive a link to reset your password, <br />
-                                            enter your email.
-                                        </Typography>
-                                    </div>
-                                    <Box style={{ textAlign: "center", marginTop: "30px" }}>
-                                        <div>
-                                            <TextField
-                                                fullWidth
-                                                className={classes.textFieldStyle}
-                                                value={values.email}
-                                                onChange={handleChange("email")}
-                                                size="small"
-                                                id="outlined-basic"
-                                                label="Email"
-                                                variant="outlined"
-                                                color='secondary'
-                                            />
-                                        </div>
+                    <Grid item xs={12} sm={0} lg={6} md={6} xl={6} style={{ backgroundColor: '' }}>
+                        <Box style={{ diplay: 'flex', margin: '0 auto', textAlign: 'center' }}>
+                            <img src={logo} alt='logo' width="150px" height="auto" />
+                            <Typography sx={{ fontSize: '15px' }}>
+                            To receive a link to reset your password, <br/>
+                            enter your email.
+                            </Typography>
+                        </Box>
+                        
 
-                                        <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
-                                            <Typography variant="subtitle1" className={classes.forgotPass}>
-                                                <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
-                                                Sign into existing account
-                                                </Link>
-                                            </Typography>
-                                            <Button
-                                                className={classes.tryForFreeButton}
-                                                style={{marginLeft: '100px'}}
-                                                variant="contained"
-                                            // onClick={handleSubmit}
-                                            >
-                                                Send Link
-                                            </Button>
-                                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <Box sx={{ marginTop: "40px", width: '80%', backgroundColor: '', textAlign: 'center' }}>
+                                
 
-                                        {/* <div>
+                            <div>
+                                <TextField
+                                    fullWidth
+                                    className={classes.textFieldStyle}
+                                    value={values.email}
+                                    onChange={handleChange("email")}
+                                    size="small"
+                                    id="outlined-basic"
+                                    label="Email"
+                                    variant="outlined"
+                                    color='secondary'
+                                />
+                            </div>
+
+                            <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
+                                <Typography variant="subtitle1" className={classes.forgotPass}>
+                                    <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
+                                        Sign into existing account
+                                    </Link>
+                                </Typography>
+                                <Button
+                                    className={classes.tryForFreeButton}
+                                    style={{ marginLeft: '100px' }}
+                                    variant="contained"
+                                // onClick={handleSubmit}
+                                >
+                                    Send Link
+                                </Button>
+                            </div>
+
+                            {/* <div>
                                             {relevantSubmitComponent}
                                             <Typography
                                                 variant="subtitle2"
@@ -142,11 +134,8 @@ const ForgotPassword = () => {
                                                 {message ?? ""}
                                             </Typography>
                                         </div> */}
+                                        </Box></div>
 
-                                    </Box>
-                                </ThemeProvider>
-                            </Box>
-                        </Box>
                     </Grid>
 
                 </Grid>

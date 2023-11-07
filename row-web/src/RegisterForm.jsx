@@ -39,19 +39,6 @@ const countries = Object.values(countryList.all).sort((a, b) => {
 // console.log('names=======>', countries['0'].name)
 
 
-
-const textInputTheme = createTheme({
-    palette: {
-        primary: {
-            main: "#1976d2",
-            // main: "#ec2121",
-        },
-        secondary: {
-            main: "#448717"
-        }
-    }
-});
-
 function RegisterForm(props) {
     const classes = useStyles();
 
@@ -140,7 +127,6 @@ function RegisterForm(props) {
         // <Box style={{ width: "70vh", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Grid container>
             <Grid item xs={12}>
-                <ThemeProvider theme={textInputTheme}>
                     <Box sx={{ marginTop: { xs: '20px', md: '0px' }, width: '100%' }}>
 
 
@@ -265,7 +251,7 @@ function RegisterForm(props) {
 
                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
                             <Checkbox color="primary" />
-                            <Typography variant="subtitle1">
+                            <Typography>
                                 Remember your account details.
                             </Typography>
                         </div>
@@ -298,7 +284,6 @@ function RegisterForm(props) {
               Or sign into an existing account
             </Link> */}
                     </Box>
-                </ThemeProvider>
             </Grid>
         </Grid>
         // </Box>
