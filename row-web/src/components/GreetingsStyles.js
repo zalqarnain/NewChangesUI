@@ -27,5 +27,17 @@ export const useStyles = makeStyles({
         height: "500px",
         // mixBlendMode: "exclusion",
         backgroundColor: "rgba(0, 0, 0, 0.0)",
-    }
+    },
+    cardLightStyle: {
+        marginBottom: '10px'
+        // '&:hover'
+    },
+    wnpStyle: {
+        marginBlock: 4
+        // '&:hover'
+    },
+    wnpReleaseStyle: {
+        fontSize: '13px',
+         marginLeft: '27px'
+    },
   });
