@@ -32,12 +32,12 @@ function App() {
 
   return (
     <div>
-      {/* <ThemeProvider theme={customTheme}> */}
+      <ThemeProvider theme={customTheme}>
         <Login />
         {/* <ForgotPassword /> */}
         {/* <RegisterPage/> */}
         {/* <LandingController /> */}
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </div>
   );
 }

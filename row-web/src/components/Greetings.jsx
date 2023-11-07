@@ -21,7 +21,8 @@ const Greetings = () => {
         "border": "0px solid grey",
         "borderRadius": "8px",
         "padding": "8px",
-        "backgroundColor": '#f5f1f1'
+        "backgroundColor": '#f5f1f1',
+        "marginTop": '50px'
         // "backgroundColor": '#f5f1f1'
     }
 
@@ -39,7 +40,7 @@ const Greetings = () => {
                             <Typography className="greeting-main" variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontSize: { sm: 41, md: 49, lg: 56 } }}>
                                 {releaseNotes.greeting}
                             </Typography>
-                            {!showWnp ? <></> : <Card sx={{ ...cardLightStyle, marginTop: '50px' }} elevation={0}>
+                            {!showWnp ? <></> : <Card sx={{ ...cardLightStyle }} elevation={0}>
                                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                                     {releaseNotes.title}{releaseNotes.dev ? <Chip size="medium" variant="error" sx={{ marginLeft: '10px', backgroundColor: 'rgba(255, 0,0, 0.2)', color: 'darkred', border: '1px solid red' }} label={releaseNotes.dev ? "Development" : ""} /> : <></>}
                                 </Typography>

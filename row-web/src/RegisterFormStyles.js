@@ -11,7 +11,6 @@ export const useStyles = makeStyles({
     },
     textFieldStyle: {
         marginBottom: "20px",
-        backgroundColor: "white",
     },
     existingAccountLink: {
         color: "purple",
@@ -31,8 +30,6 @@ export const useStyles = makeStyles({
         borderRadius: "4px",
     },
     forgotPass: {
-        color: "#1f0851",
-        textDecoration: "underline",
         marginBottom: '10px'
         // '&:hover'
     },

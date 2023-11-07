@@ -4,17 +4,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 export const customTheme=createTheme({
 
     typography:{
-      allVariants:{
-        color: 'purple'
-      },
-        h5:{
-            fontSize:'25px',
-            color: 'green'
+    //   allVariants:{
+    //     color: 'purple'
+    //   },
+        subtitle1:{
+            color: "#1f0851",
+            textDecoration: "underline",
         },
-        h4:{
-            fontSize:'30px',
-            color: 'blue'
-        }
     },
     
     overrides: {
@@ -50,28 +46,7 @@ export const customTheme=createTheme({
             boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
           },
         },
-        MuiPaper : {
-            root: {
-                
-                backgroundColor: 'lightgray',
-                border: '1px solid gray',
-                padding: 30, 
-                height: '70vh', 
-                maxWidth: 280, 
-                margin: "0 auto" 
-              },
-        }, 
-        MuiCard : {
-          root: {
-              
-              backgroundColor: 'blue',
-              border: '1px solid white',
-              padding: 30, 
-              height: '70vh', 
-              maxWidth: 280, 
-              margin: "0 auto" 
-            },
-      }, 
+        
         MuiTextField : {
             root: {
                 
@@ -83,7 +58,7 @@ export const customTheme=createTheme({
 
         MuiCircularProgress : {
           root: {
-            color: 'red'
+            color: 'white'
           }
         }
 
