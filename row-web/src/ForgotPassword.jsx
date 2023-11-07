@@ -1,6 +1,5 @@
 import React, { Component, useEffect } from "react";
 import { Container, Grid, Box, Typography, TextField, Button, Link } from '@mui/material';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
@@ -11,10 +10,6 @@ import FormControl from "@mui/material/FormControl";
 import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
 import { useStyles } from './ForgotPasswordStyles.js'
-
-const textInputTheme = createTheme({
-
-});
 
 
 const ForgotPassword = () => {
