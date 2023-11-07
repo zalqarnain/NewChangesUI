@@ -27,15 +27,13 @@ export const useStyles = makeStyles({
         backgroundColor: "#448717",
         color: "white",
         fontSize: "17px",
-        width: "8rem",
         marginBottom: "15px",
-        marginLeft: '200px',
         borderRadius: "4px",
     },
     forgotPass: {
         color: "#1f0851",
         textDecoration: "underline",
-        marginBottom: '25px'
+        marginBottom: '10px'
         // '&:hover'
     },
   });

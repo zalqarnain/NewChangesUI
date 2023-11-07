@@ -24,7 +24,7 @@ import { useTheme } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import countryList from 'country-list-js';
 import logo from './DeepRoadLogoText.svg';
-import { makeStyles } from "@mui/styles"
+import {useStyles} from './RegisterFormStyles.js'
 
 const countries = Object.values(countryList.all).sort((a, b) => {
     if (a.name < b.name) {
@@ -51,39 +51,6 @@ const textInputTheme = createTheme({
         }
     }
 });
-
-const useStyles = makeStyles((theme) => ({
-    heading: {
-        margin: "0 auto 0 auto",
-        width: "80%",
-        textAlign: "center",
-        fontWeight: "bold",
-        fontSize: "24px",
-        color: "#1f0851",
-    },
-    textFieldStyle: {
-        marginBottom: "20px",
-        backgroundColor: "white",
-        textAlign: 'start'
-        // borderRadius: "30px",
-    },
-    existingAccountLink: {
-        color: "#1f0851",
-        cursor: "pointer",
-        textDecoration: "underline",
-        display: 'flex',
-        justifyContent: 'center'
-    },
-    tryForFreeButton: {
-        textTransform: "capitalize",
-        backgroundColor: "#448717",
-        color: "white",
-        marginBottom: "15px",
-        borderRadius: '2px',
-        width: '100px',
-    },
-}));
-
 
 function RegisterForm(props) {
     const classes = useStyles();
