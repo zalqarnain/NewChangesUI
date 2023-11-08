@@ -140,47 +140,44 @@ function RegisterForm(props) {
                             </Typography>
                         </Box>
 
-                        <div style={{ padding: '20px' }}></div>
+                        <Box style={{ padding: '20px' }}></Box>
 
                         {/* name */}
                         <TextField
                             fullWidth
-                            className={classes.textFieldStyle}
+                            style={{ marginBottom: "20px" }}
                             value={values.fullName}
                             onChange={handleChange("fullName")}
                             size="small"
                             id="outlined-basic"
                             label="Full name"
                             variant="outlined"
-                            color="secondary"
                         />
-                        <div>
+                        <Box>
                             <TextField
                                 fullWidth
-                                className={classes.textFieldStyle}
+                                style={{ marginBottom: "20px" }}
                                 value={values.email}
                                 onChange={handleChange("email")}
                                 size="small"
                                 id="outlined-basic"
                                 label="Email"
                                 variant="outlined"
-                                color="secondary"
                             />
-                        </div>
-                        <div>
+                        </Box>
+                        <Box>
                             <TextField
                                 fullWidth
-                                className={classes.textFieldStyle}
+                                style={{ marginBottom: "20px" }}
                                 value={values.orgName}
                                 onChange={handleChange("orgName")}
                                 size="small"
                                 id="outlined-basic"
                                 label="Organisation name"
                                 variant="outlined"
-                                color="secondary"
                             />
-                        </div>
-                        <div>
+                        </Box>
+                        <Box>
                             <FormControl fullWidth variant="outlined">
                                 <InputLabel
                                     htmlFor="outlined-adornment-password"
@@ -201,7 +198,6 @@ function RegisterForm(props) {
                                     type={values.showPassword ? "text" : "password"}
                                     value={values.password}
                                     onChange={handleChange("password")}
-                                    color="secondary"
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
@@ -221,9 +217,9 @@ function RegisterForm(props) {
                                     }
                                 />
                             </FormControl>
-                        </div>
+                        </Box>
                         {/* country */}
-                        <div>
+                        <Box>
                             <TextField
                                 id="outlined-select-currency"
                                 select
@@ -232,8 +228,8 @@ function RegisterForm(props) {
                                 onChange={handleChange("countryName")}
                                 // helperText="Please select country name"
                                 fullWidth
-                                color="secondary"
-                                className={classes.textFieldStyle}
+                                // className={classes.textFieldStyle}
+                                style={{ marginBottom: "20px" }}
                                 size="small"
                             >
                                 {countries.map((option, key) => (
@@ -242,33 +238,33 @@ function RegisterForm(props) {
                                     </MenuItem>
                                 ))}
                             </TextField>
-                        </div>
+                        </Box>
                         {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
                             {relevantSubmitComponent}
 
                         </div> */}
 
-                        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+                        <Box style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
                             <Checkbox color="primary" />
                             <Typography>
                                 Remember your account details.
                             </Typography>
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography variant="subtitle1" className={classes.forgotPass} style={{ marginBottom: '10px' }}>
+                        </Box>
+                        <Box style={{ display: 'flex', alignItems: 'center' }}>
+                            <Typography variant="subtitle1" style={{ marginBottom: '10px' }}>
                                 <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
                                     Sign into existing account
                                 </Link>
                             </Typography>
                             <Button
-                                className={classes.tryForFreeButton}
+                                // className={classes.tryForFreeButton}
                                 style={{ marginLeft: '200px' }}
                                 variant="contained"
                             // onClick={handleSubmit}
                             >
                                 Register
                             </Button>
-                        </div>
+                        </Box>
 
                         <Typography
                             variant="subtitle2"

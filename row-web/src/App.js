@@ -22,9 +22,9 @@ function App() {
     <div>
       <ThemeProvider theme={customTheme}>
         {/* <Login /> */}
-        <ForgotPassword />
+        {/* <ForgotPassword /> */}
         {/* <RegisterPage/> */}
-        {/* <LandingController /> */}
+        <LandingController />
       </ThemeProvider>
     </div>
   );
