@@ -21,10 +21,10 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={customTheme}>
-        {/* <Login /> */}
+        <Login />
         {/* <ForgotPassword /> */}
         {/* <RegisterPage/> */}
-        <LandingController />
+        {/* <LandingController /> */}
       </ThemeProvider>
     </div>
   );
