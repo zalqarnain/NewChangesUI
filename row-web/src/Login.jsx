@@ -8,34 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
-// import {useStyles} from './LoginStyles.js'
-import { styled } from '@mui/system';
-
-const ButtonStyle = styled(Button)(
-    ({ theme }) => ({
-        textTransform: "capitalize",
-        fontSize: "17px",
-        width: "100px",
-        marginBottom: "15px",
-        marginLeft: '200px',
-        borderRadius: "4px",
-    })
-);
-
-const OuterDiv = styled(Box)(
-    ({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    })
-);
-
-const InnerDiv = styled(Box)(
-    ({ theme }) => ({
-        display: 'flex',
-        alignItems: 'center',
-    })
-);
+import {ButtonStyle, OuterDiv, InnerDiv} from './LoginStyles.js'
 
 const Login = () => {
     const [values, setValues] = useState({

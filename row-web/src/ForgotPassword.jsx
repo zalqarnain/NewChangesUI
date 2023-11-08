@@ -9,37 +9,10 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import icon from './DeepRoadGraphicMapGoPro.png';
 import logo from './DeepRoadLogoText.svg';
-import { useStyles } from './ForgotPasswordStyles.js'
-import { styled } from '@mui/system';
+import { ButtonStyle, OuterDiv, InnerDiv } from './ForgotPasswordStyles.js'
 
-const ButtonStyle = styled(Button)(
-    ({ theme }) => ({
-        textTransform: "capitalize",
-        fontSize: "17px",
-        width: "150px",
-        marginBottom: "15px",
-        marginLeft: '200px',
-        borderRadius: "4px",
-    })
-);
-
-const OuterDiv = styled(Box)(
-    ({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    })
-);
-
-const InnerDiv = styled(Box)(
-    ({ theme }) => ({
-        display: 'flex',
-        alignItems: 'center',
-    })
-);
 
 const ForgotPassword = () => {
-    const classes = useStyles();
 
     const [values, setValues] = React.useState({
         email: "",
@@ -111,19 +84,20 @@ const ForgotPassword = () => {
                                 <Box>
                                     <TextField
                                         fullWidth
-                                        className={classes.textFieldStyle}
+                                        // className={classes.textFieldStyle}
                                         value={values.email}
                                         onChange={handleChange("email")}
                                         size="small"
                                         id="outlined-basic"
                                         label="Email"
                                         variant="outlined"
-                                        color='secondary'
                                     />
                                 </Box>
 
                                 <InnerDiv style={{ marginTop: '20px' }}>
-                                    <Typography variant="subtitle1" className={classes.forgotPass}>
+                                    <Typography variant="subtitle1" 
+                                    // className={classes.forgotPass}
+                                    >
                                         <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
                                             Sign into existing account
                                         </Link>

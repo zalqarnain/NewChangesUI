@@ -1,28 +1,32 @@
-import { makeStyles } from "@mui/styles"
+import { styled } from '@mui/system';
+import { Box, Button, Grid } from '@mui/material';
 
-export const useStyles = makeStyles({
-    textFieldStyle: {
-        marginBottom: "20px",
-    },
-    existingAccountLink: {
-        color: "purple",
-        cursor: "pointer",
-        textDecoration: "none",
-        "&:hover": {
-            textDecoration: "underline",
-            color: "red",
-        },
-    },
-    tryForFreeButton: {
-        textTransform: "capitalize",
-        backgroundColor: "#448717",
-        color: "white",
-        fontSize: "17px",
-        marginBottom: "15px",
-        borderRadius: "4px",
-    },
-    forgotPass: {
-        marginBottom: '10px'
-        // '&:hover'
-    },
-  });
+export const OuterGrid = styled(Grid)(
+    ({ theme }) => ({
+        alignItems: 'center', 
+        justifyContent: 'center' 
+    })
+);
+
+export const Heading = styled(Box)(
+    ({ theme }) => ({
+        diplay: 'flex', 
+        textAlign: 'center'
+    })
+)
+
+export const DetailsText = styled(Box)(
+    ({ theme }) => ({
+        display: 'flex', 
+        alignItems: 'center'
+    })
+)
+
+export const ErrorText = styled(Box)(
+    ({ theme }) => ({
+        color: "red", 
+        marginTop: "10px",
+         display: 'flex', 
+         justifyContent: 'center' 
+    })
+)

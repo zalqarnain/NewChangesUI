@@ -23,13 +23,6 @@ export const customTheme=createTheme({
     },
     
     overrides: {
-
-      MuiDialogContent: {
-        root: {
-          backgroundColor: "orange", 
-          padding: "16px", 
-        },
-      },
         // Style sheet name ⚛️
         MuiButton: {
           // Name of the rule

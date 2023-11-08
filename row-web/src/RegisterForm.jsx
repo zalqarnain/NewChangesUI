@@ -23,7 +23,7 @@ import { useTheme } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import countryList from 'country-list-js';
 import logo from './DeepRoadLogoText.svg';
-import {useStyles} from './RegisterFormStyles.js'
+import { Heading, DetailsText, ErrorText } from './RegisterFormStyles.js'
 
 const countries = Object.values(countryList.all).sort((a, b) => {
     if (a.name < b.name) {
@@ -39,7 +39,6 @@ const countries = Object.values(countryList.all).sort((a, b) => {
 
 
 function RegisterForm(props) {
-    const classes = useStyles();
 
     //   const { error, showLoader } = props.auth;
 
@@ -111,7 +110,7 @@ function RegisterForm(props) {
         //     </Button>
         //   ) : (
         <Button
-            className={classes.tryForFreeButton}
+            // className={classes.tryForFreeButton}
             variant="contained"
             sx={{ textTransform: 'inherit' }}
             onClick={handleSubmit}
@@ -126,159 +125,158 @@ function RegisterForm(props) {
         // <Box style={{ width: "70vh", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Grid container>
             <Grid item xs={12}>
-                    <Box sx={{ marginTop: { xs: '20px', md: '0px' }, width: '100%' }}>
+                <Box sx={{ marginTop: { xs: '20px', md: '0px' }, width: '100%' }}>
 
 
-                        {/* <Typography variant="h5" gutterBottom sx={{ fontWeight: '', marginBottom: '50px',display:'flex',justifyContent:'center', color:'#1e1e1e' }}>
+                    {/* <Typography variant="h5" gutterBottom sx={{ fontWeight: '', marginBottom: '50px',display:'flex',justifyContent:'center', color:'#1e1e1e' }}>
             Create a free account
           </Typography> */}
-                        <Box style={{ diplay: 'flex', margin: '0 auto', textAlign: 'center' }} >
-                            <img src={logo} alt='logo' width="150px" height="auto" />
-                            <Typography sx={{ fontSize: '15px' }}>
-                                Lörem ipsum resa prerade, krodast. <br />
-                                Heterorad lilingar dibör, plavis bigas krock.
-                            </Typography>
-                        </Box>
+                    <Heading style={{ margin: '0 auto' }} >
+                        <img src={logo} alt='logo' width="150px" height="auto" />
+                        <Typography sx={{ fontSize: '15px' }}>
+                            Lörem ipsum resa prerade, krodast. <br />
+                            Heterorad lilingar dibör, plavis bigas krock.
+                        </Typography>
+                    </Heading>
 
-                        <Box style={{ padding: '20px' }}></Box>
+                    <Box style={{ padding: '20px' }}></Box>
 
-                        {/* name */}
+                    {/* name */}
+                    <TextField
+                        fullWidth
+                        style={{ marginBottom: "20px" }}
+                        value={values.fullName}
+                        onChange={handleChange("fullName")}
+                        size="small"
+                        id="outlined-basic"
+                        label="Full name"
+                        variant="outlined"
+                    />
+                    <Box>
                         <TextField
                             fullWidth
                             style={{ marginBottom: "20px" }}
-                            value={values.fullName}
-                            onChange={handleChange("fullName")}
+                            value={values.email}
+                            onChange={handleChange("email")}
                             size="small"
                             id="outlined-basic"
-                            label="Full name"
+                            label="Email"
                             variant="outlined"
                         />
-                        <Box>
-                            <TextField
-                                fullWidth
-                                style={{ marginBottom: "20px" }}
-                                value={values.email}
-                                onChange={handleChange("email")}
-                                size="small"
-                                id="outlined-basic"
-                                label="Email"
-                                variant="outlined"
-                            />
-                        </Box>
-                        <Box>
-                            <TextField
-                                fullWidth
-                                style={{ marginBottom: "20px" }}
-                                value={values.orgName}
-                                onChange={handleChange("orgName")}
-                                size="small"
-                                id="outlined-basic"
-                                label="Organisation name"
-                                variant="outlined"
-                            />
-                        </Box>
-                        <Box>
-                            <FormControl fullWidth variant="outlined">
-                                <InputLabel
-                                    htmlFor="outlined-adornment-password"
-                                    size="small"
-                                >
-                                    Password
-                                </InputLabel>
-                                <OutlinedInput
-                                    fullWidth
-                                    style={{
-                                        marginBottom: "20px",
-                                        backgroundColor: "white",
-                                        color: "#000",
-                                    }}
-                                    size="small"
-                                    id="outlined-adornment-password"
-                                    label="Password"
-                                    type={values.showPassword ? "text" : "password"}
-                                    value={values.password}
-                                    onChange={handleChange("password")}
-                                    endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-                                                onClick={handleClickShowPassword}
-                                                onMouseDown={handleMouseDownPassword}
-                                                edge="end"
-                                            >
-                                                {/* {values.showPassword ? <VisibilityOff /> : <Visibility />} */}
-                                                {values.showPassword ? (
-                                                    <Visibility />
-                                                ) : (
-                                                    <VisibilityOff />
-                                                )}
-                                            </IconButton>
-                                        </InputAdornment>
-                                    }
-                                />
-                            </FormControl>
-                        </Box>
-                        {/* country */}
-                        <Box>
-                            <TextField
-                                id="outlined-select-currency"
-                                select
-                                label="Country"
-                                value={values.countryName}
-                                onChange={handleChange("countryName")}
-                                // helperText="Please select country name"
-                                fullWidth
-                                // className={classes.textFieldStyle}
-                                style={{ marginBottom: "20px" }}
+                    </Box>
+                    <Box>
+                        <TextField
+                            fullWidth
+                            style={{ marginBottom: "20px" }}
+                            value={values.orgName}
+                            onChange={handleChange("orgName")}
+                            size="small"
+                            id="outlined-basic"
+                            label="Organisation name"
+                            variant="outlined"
+                        />
+                    </Box>
+                    <Box>
+                        <FormControl fullWidth variant="outlined">
+                            <InputLabel
+                                htmlFor="outlined-adornment-password"
                                 size="small"
                             >
-                                {countries.map((option, key) => (
-                                    <MenuItem key={key} value={option.name}>
-                                        {option.name}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
-                        </Box>
-                        {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                Password
+                            </InputLabel>
+                            <OutlinedInput
+                                fullWidth
+                                style={{
+                                    marginBottom: "20px",
+                                    backgroundColor: "white",
+                                    color: "#000",
+                                }}
+                                size="small"
+                                id="outlined-adornment-password"
+                                label="Password"
+                                type={values.showPassword ? "text" : "password"}
+                                value={values.password}
+                                onChange={handleChange("password")}
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                            edge="end"
+                                        >
+                                            {/* {values.showPassword ? <VisibilityOff /> : <Visibility />} */}
+                                            {values.showPassword ? (
+                                                <Visibility />
+                                            ) : (
+                                                <VisibilityOff />
+                                            )}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                            />
+                        </FormControl>
+                    </Box>
+                    {/* country */}
+                    <Box>
+                        <TextField
+                            id="outlined-select-currency"
+                            select
+                            label="Country"
+                            value={values.countryName}
+                            onChange={handleChange("countryName")}
+                            // helperText="Please select country name"
+                            fullWidth
+                            // className={classes.textFieldStyle}
+                            style={{ marginBottom: "20px" }}
+                            size="small"
+                        >
+                            {countries.map((option, key) => (
+                                <MenuItem key={key} value={option.name}>
+                                    {option.name}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    </Box>
+                    {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
                             {relevantSubmitComponent}
 
                         </div> */}
 
-                        <Box style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
-                            <Checkbox color="primary" />
-                            <Typography>
-                                Remember your account details.
-                            </Typography>
-                        </Box>
-                        <Box style={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography variant="subtitle1" style={{ marginBottom: '10px' }}>
-                                <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
-                                    Sign into existing account
-                                </Link>
-                            </Typography>
-                            <Button
-                                // className={classes.tryForFreeButton}
-                                style={{ marginLeft: '200px' }}
-                                variant="contained"
-                            // onClick={handleSubmit}
-                            >
-                                Register
-                            </Button>
-                        </Box>
-
-                        <Typography
-                            variant="subtitle2"
-                            style={{ color: "red", marginTop: "10px", display: 'flex', justifyContent: 'center' }}
-                        >
-                            {errorMsg}
+                    <DetailsText style={{ marginBottom: '5px' }}>
+                        <Checkbox color="primary" />
+                        <Typography>
+                            Remember your account details.
                         </Typography>
-                        {/* <Typography style={{ color: "red", margin: "0px", display: 'flex', justifyContent: 'center' }}>
+                    </DetailsText>
+                    <DetailsText>
+                        <Typography variant="subtitle1" style={{ marginBottom: '10px' }}>
+                            <Link to="/a/forgot-pass" style={{ color: "#1f0851" }}>
+                                Sign into existing account
+                            </Link>
+                        </Typography>
+                        <Button
+                            // className={classes.tryForFreeButton}
+                            style={{ marginLeft: '200px' }}
+                            variant="contained"
+                        // onClick={handleSubmit}
+                        >
+                            Register
+                        </Button>
+                    </DetailsText>
+
+                    <ErrorText
+                        variant="subtitle2"
+                    >
+                        {errorMsg}
+                    </ErrorText>
+                    {/* <Typography style={{ color: "red", margin: "0px", display: 'flex', justifyContent: 'center' }}>
               {error ?? ""}
             </Typography> */}
-                        {/* <Link style={styles.existingAccountLink} to="/a/login">
+                    {/* <Link style={styles.existingAccountLink} to="/a/login">
               Or sign into an existing account
             </Link> */}
-                    </Box>
+                </Box>
             </Grid>
         </Grid>
         // </Box>

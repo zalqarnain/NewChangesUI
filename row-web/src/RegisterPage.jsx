@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 // import { Navigate } from "react-router-dom";
 import { Container, Paper, Typography } from "@mui/material";
 import icon from './DeepRoadGraphicMapGoPro.png';
+import { OuterGrid } from './RegisterFormStyles.js'
 
 const RegisterPage = () => {
   // if (isSignedIn) {
@@ -20,13 +21,13 @@ const RegisterPage = () => {
           direction="row"
           style={{ height: `calc(100vh - 70px)`, backgroundColor: '' }}
         >
-          <Grid item xs={0} sm={0} lg={6} md={6} xl={6} sx={{ backgroundColor: "", display: { xs: 'none', md: 'flex' }, alignItems: 'center', justifyContent: 'center' }}>
+          <OuterGrid item xs={0} sm={0} lg={6} md={6} xl={6} sx={{display: { xs: 'none', md: 'flex' }}}>
             <img src={icon} width="100%" />
-          </Grid>
-          <Grid item xs={12} sm={0} lg={6} md={6} xl={6} style={{ backgroundColor: "", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          </OuterGrid>
+          <OuterGrid item xs={12} sm={0} lg={6} md={6} xl={6} sx={{display: 'flex'}}>
 
             <RegisterForm />
-          </Grid>
+          </OuterGrid>
         </Grid>
       </Container>
     );
